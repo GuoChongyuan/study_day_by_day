@@ -4,6 +4,31 @@
     Tomcat部署Webapp时，依赖context.xml和web.xml（<CATALINA_HOME>/conf/目录下的context.xml和web.xml
     在部署任何webapp时都会启动****_`****`_****，他们定义一些默认行为，而具体每个webapp的  META-INF/context.xml  和  WEB-INF/web.xml
     则定义了每个webapp特定的行为）两个配置文件部署web应用。
+### Tomcat组件介绍
+    常见组件
+    1.服务器（server）
+        实例，通常一个jvm只能包含一个实例，一般情况下，一个物理服务器可以启动多个jvm，从而启动多个实例，但一般不这么做
+    2.服务（service)
+        一个服务组件通常包含一个引擎和此引擎相关联的一个或多个链接服务器
+    3.连接器（connectors)
+        一个引擎能配置多个连接器 但是每个连接器的端口不能冲突
+        同时，tomcat也支持AJP JSERV和JK2连接器，实现让apache反向代理到后端服务器的非常高效的传输协议
+    容器类组件
+    4.引擎
+        可以自己接收用户的http请求，并构建响应报文，而且可以在内部处理java程序的整个套间
+    5.主机
+    6.上下文
+    被嵌套类组件
+    7.阀门
+        能够过滤也可以做访问控制
+    8.日志记录器
+    9.领域（Realm）
+        用来实现用户的认证和授权
+    对tomcat来讲，每种模型上的实现必须开发一种程序，才能完成相应组件的功能，而java中任何程序都是一个类
+### Tomcat工作模式
+    进入Tomcat的请求可以根据Tomcat的工作模式分为如下两类：
+    Tomcat作为应用程序服务器：请求来自于前端的web服务器，这可能是Apache, IIS, Nginx等；
+    Tomcat作为独立服务器：请求来自于web浏览器；
 ### 1.配置文件简介
     Tomcat 的配置文件并不多，由4个 xml 文件组成，分别是 context.xml、web.xml、server.xml、tomcat-users.xml 这几个文件。
     　server.xml: Tomcat的主配置文件，包含Service, Connector, Engine, Realm, Valve, Hosts主组件的相关配置信息；
@@ -79,12 +104,14 @@
     允许访问Tomcat只读状态页面(即URL路径为/manager/status/*)
     从Tomcat Manager内部配置文件中可以得知，manager-gui、manager-script、manager-jmx均具备manager-status的权限，
     也就是说，manager-gui、manager-script、manager-jmx三种角色权限无需再额外添加manager-status权限，即可直接访问路径/manager/status/*。
-#### 远程访问manager(/conf/Catalina/localhost/下  添加manager.xml)
+#### 5.远程访问manager(/conf/Catalina/localhost/下  添加manager.xml)
 ```xml
     <Context privileged="true" antiResourceLocking="false"
              docBase="${catalina.home}/webapps/manager">
                  <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^.*$" />
     </Context>
 ```
-# 代办：server.xml web.xml context.xml解析
+#### 6.web.xml
+    /WEB_INF/web.xml的父文件。
+
 
