@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/tomcat_learn/pom.xml" />
         <option value="$PROJECT_DIR$/nginx_learn/pom.xml" />
+        <option value="$PROJECT_DIR$/qunit_domestic/pom.xml" />
       </list>
     </option>
   </component>

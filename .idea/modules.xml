@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/nginx_learn/nginx_learn.iml" filepath="$PROJECT_DIR$/nginx_learn/nginx_learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qunit_domestic/qunit_domestic.iml" filepath="$PROJECT_DIR$/qunit_domestic/qunit_domestic.iml" />
       <module fileurl="file://$PROJECT_DIR$/tomcat_learn/tomcat_learn.iml" filepath="$PROJECT_DIR$/tomcat_learn/tomcat_learn.iml" />
     </modules>
   </component>
