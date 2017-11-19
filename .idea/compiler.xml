@@ -24,12 +24,14 @@
         <processorPath useClasspath="true" />
         <module name="nginx_learn" />
         <module name="qunit_domestic" />
+        <module name="test_learn" />
         <module name="tomcat_learn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="nginx_learn" target="1.5" />
       <module name="qunit_domestic" target="1.5" />
+      <module name="test_learn" target="1.5" />
       <module name="tomcat_learn" target="1.5" />
     </bytecodeTargetLevel>
   </component>
