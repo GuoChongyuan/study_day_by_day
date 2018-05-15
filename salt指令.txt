@@ -1,0 +1,20 @@
+# 安装
+yum install salt-master salt-minion
+#开机自启动
+chkconfig salt-master on
+chkconfig salt-minion on
+#启动
+/etc/init.d/salt/minion  #master端
+/etc/init.d/salt/master  # minion端
+
+#认证
+/etc/salt/pki/minion/  交出公钥
+/etc/salt/pki/master   交出公钥
+
+# 查看key
+salt-key
+salt-key -A #同意所有
+salt-key -a * # 同意所有
+
+
+
