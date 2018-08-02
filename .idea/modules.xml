@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/nginx_learn/coding_learn.iml" filepath="$PROJECT_DIR$/nginx_learn/coding_learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coding_learn/com.qunar.nginx.learn.iml" filepath="$PROJECT_DIR$/coding_learn/com.qunar.nginx.learn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qunit_domestic/com.qunar.qunit_domestic.iml" filepath="$PROJECT_DIR$/qunit_domestic/com.qunar.qunit_domestic.iml" />
       <module fileurl="file://$PROJECT_DIR$/nginx_learn/nginx_learn.iml" filepath="$PROJECT_DIR$/nginx_learn/nginx_learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/qunit_domestic/qunit_domestic.iml" filepath="$PROJECT_DIR$/qunit_domestic/qunit_domestic.iml" />
       <module fileurl="file://$PROJECT_DIR$/test_learn/test_learn.iml" filepath="$PROJECT_DIR$/test_learn/test_learn.iml" />

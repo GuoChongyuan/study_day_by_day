@@ -22,6 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="com.qunar.nginx.learn" />
+        <module name="com.qunar.qunit_domestic" />
         <module name="nginx_learn" />
         <module name="qunit_domestic" />
         <module name="test_learn" />
@@ -29,6 +31,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.qunar.nginx.learn" target="1.5" />
+      <module name="com.qunar.qunit_domestic" target="1.5" />
       <module name="nginx_learn" target="1.5" />
       <module name="qunit_domestic" target="1.5" />
       <module name="test_learn" target="1.5" />
