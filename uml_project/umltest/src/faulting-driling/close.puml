@@ -1,0 +1,11 @@
+关闭注入：/drilling/operate/close
+@startuml
+OperateController -> DrillQueryService: close
+DrillQueryService -> DeployRepository: update
+DeployRepository -> 数据库: updateAppState
+OperateController -> DrillCommandService: close
+DrillCommandService -> mock平台: closeOprnDrillingMock
+mock平台 -> mock数据库:  /mockdata/backdoor/deleteMockRuleAndResult
+DrillCommandService -> MethodInfoDao: closeOprnDrillingMock
+MethodInfoDao -> 数据库: updateOperateStatus
+@enduml

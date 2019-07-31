@@ -1,0 +1,15 @@
+@startuml
+QueryController -> IDrillQueryService: queryTopology
+IDrillQueryService -> MethodRepository: queryDubboByCustomerAppCode
+MethodRepository -> 数据库: findMethodsByCustomer
+IDrillQueryService -> RequestService: syncAddQueryDubboByCustomerAppCode
+RequestService -> 服务治理: /api/getRelyOnServiceByQAppCode
+RequestService -> 数据库: findMethodsByCustomer
+RequestService -> 数据库: save
+IDrillQueryService -> MethodInfoService: syncAddQueryDubboByCustomerAppCode
+MethodInfoService -> RequestService: syncDubboMethodsIncrem
+RequestService -> 服务治理: /api/getRelyOnServiceByQAppCode
+MethodInfoService -> MethodInfoDao: syncDubboMethodsIncrem
+MethodInfoDao -> 数据库: findByAppCodeAndDrillType
+MethodInfoDao -> 数据库: save
+@enduml

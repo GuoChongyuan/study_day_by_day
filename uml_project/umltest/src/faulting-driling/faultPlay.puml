@@ -1,0 +1,11 @@
+故障演练：/drilling/operate/play
+@startuml
+OperateController -> OperateService: play
+OperateService -> DrillCommandService: sendCommand
+DrillCommandService -> DrillCommandService: openDrillOnMock
+DrillCommandService -> Mock4ServiceUtils: openDrillOnMock
+Mock4ServiceUtils -> mock平台: addOrUpdateDrillInfo
+mock平台 -> mock数据库: /mockdata/service/api/addOrUpdateDrillInfo
+DrillCommandService -> MethodInfoDao: updateMethodAndRecord
+MethodInfoDao -> 数据库: updateOperateStatus
+@enduml

@@ -1,0 +1,7 @@
+开启注入：/drilling/operate/openProd
+@startuml
+QueryController -> IDrillQueryService: queryAppStateAll
+IDrillQueryService -> DeployInfoService: queryDeployNodeByAppCode
+DeployInfoService -> DeployRepository: queryDeploys
+DeployRepository -> 数据库: findByAppCodeAndAddresses
+@enduml

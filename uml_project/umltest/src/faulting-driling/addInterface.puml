@@ -1,0 +1,10 @@
+开启注入：/drilling/operate/openProd
+@startuml
+OperateController -> MethodInfoOperateService: addInterface
+MethodInfoOperateService ->RequestService: insertMethodInfo
+RequestService -> MethodRepository: setRef
+MethodRepository -> 数据库: findMethodBy(查询节点信息)
+MethodRepository -> 数据库: save(新增接口)
+MethodInfoOperateService -> MethodInfoDao
+MethodInfoDao -> 数据库: addMethodInfos
+@enduml

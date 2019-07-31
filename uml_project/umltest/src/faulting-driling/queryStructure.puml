@@ -1,0 +1,14 @@
+查询接口：/drilling/query/queryStructure
+@startuml
+QueryController -> IDrillQueryService: queryStructure
+IDrillQueryService --> MethodInfoService: queryMethodInfoVosByParam
+MethodInfoService --> MethodInfoDao : getMethodInfoCountByAppCode
+MethodInfoDao --> 数据库 : getCountByDynamicParam
+MethodInfoService -> RequestService: syncDubboMethodsIncrem
+RequestService -> 服务治理: /api/getRelyOnServiceByQAppCode
+MethodInfoService -> MethodInfoDao : addMethodInfos
+MethodInfoDao -> 数据库: addMethodInfos
+IDrillQueryService -> MethodInfoService: queryMethodInfoVosCountByParam
+MethodInfoService ->MethodInfoDao: getMethodInfoCountByMethodParam
+MethodInfoDao -> 数据库: getCountByDynamicParam
+@enduml

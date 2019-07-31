@@ -1,0 +1,7 @@
+开启注入：/drilling/operate/openProd
+@startuml
+OperateController -> AgentTurnOnUtils: openProd
+OperateService -> qagent: deployProd
+qagent -> mock平台: /mockdata/service/api/addOrUpdateDrillInfo
+mock平台 -> qagent: 添加mock规则和结果
+@enduml
